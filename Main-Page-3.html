@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <title>E-Commerce</title>
+</head>
+
+<body>
+    <header class="h-[60px] flex border-b border-b-[#a0a2a8] justify-between items-center px-[30px] py-[40px] bg-white">
+        <h1 class="text-2xl font-bold">
+            <i class="fa-solid fa-cart-shopping mr-[10px] text-[#5045E6]"></i>E-Commerce
+        </h1>
+        <nav class="max-[850px]:hidden flex gap-9 text-[#5045E6] text-[20px]">
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#5045E6] hover:text-white rounded" href="./index.html">Home</a>
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#5045E6] hover:text-white rounded" href="./About.html">About</a>
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#5045E6] hover:text-white rounded" href="./Contact.html">Contact</a>
+        </nav>
+        <div>
+            <a href="./Whishlist.html"><i class="fa-solid fa-hand-holding-heart text-3xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#5045E6] hover:scale-110"></i></a>
+            <a href="./Your-Cart.html"><i class="fa-solid fa-cart-plus text-3xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#5045E6] hover:scale-110"></i></a>
+            <a href="./Admin-Dashboard.html"><button class="max-[850px]:hidden px-6 transition-all duration-500 bg-gray-500 text-white py-[10px] rounded-md hover:bg-[#5045E6] hover:text-white hover:scale-110">Admin Dashboard</button></a>
+        </div>
+    </header>
+    
+    <h1 class="text-5xl font-bold text-center">Our Products</h1>
+    <form class="flex justify-center items-center mt-[20px] mb-[15px]">
+        <input class="border-1 w-[40vw] h-[35px] rounded-md pl-[10px]" type="text" placeholder="Search products">
+    </form>
+    <div class="main">
+        <nav class="flex gap-[20px] justify-center px-[10px] flex-wrap mb-6">
+            <a class="bg-[#5045E6] rounded-md px-[30px] py-[10px] text-white" href="">All</a>
+            <a class="bg-[#5045E6] rounded-md px-[30px] py-[10px] text-white" href="">Electronics</a>
+            <a class="bg-[#5045E6] rounded-md px-[30px] py-[10px] text-white" href="">Clothing</a>
+            <a class="bg-[#5045E6] rounded-md px-[30px] py-[10px] text-white" href="">Home & Furniture</a>
+            <a class="bg-[#5045E6] rounded-md px-[30px] py-[10px] text-white" href="">Beauty & Personal Care</a>
+            <a class="bg-[#5045E6] rounded-md px-[30px] py-[10px] text-white" href="">Toys & Games</a>
+            <a class="bg-[#5045E6] rounded-md px-[30px] py-[10px] text-white" href="">Sports  & Outdoors</a>
+        </nav>
+        <div class="w-[98%] flex flex-wrap justify-center items-center">
+            <div class="w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
+                <img class="w-[90%] h-[250px]" src="./Page3-1.png" alt="">
+                <h1 class="text-[20px] font-bold">Fjallraven - Foldsac</h1>
+                <h2 class="text-[#5045E6] font-bold">$109.95</h2>
+                <p class="text-center text-[#494a4b] text-[13px]">Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in t</p>
+                <button class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
+                <button class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
+            </div>
+
+            <div class="w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
+                <img class="w-[100%] h-[250px]" src="./Page3-2.png" alt="">
+                <h1 class="text-[20px] font-bold">Mens Casual Premium</h1>
+                <h2 class="text-[#5045E6] font-bold">$22.3</h2>
+                <p class="text-center text-[#494a4b] text-[13px]">Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fa hags</p>
+                <button class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
+                <button class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
+            </div>
+
+            <div class="w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
+                <img class="w-[100%] h-[250px]" src="./Page3-3.png" alt="">
+                <h1 class="text-[20px] font-bold">Mens Cotton Jacket</h1>
+                <h2 class="text-[#5045E6] font-bold">$55.99</h2>
+                <p class="text-center text-[#494a4b] text-[13px]">great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working</p>
+                <button class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
+                <button class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
+            </div>
+
+            <div class="w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
+                <img class="w-[100%] h-[250px]" src="./Page3-4.png" alt="">
+                <h1 class="text-[20px] font-bold">Mens Casual Slim Fit</h1>
+                <h2 class="text-[#5045E6] font-bold">$15.99</h2>
+                <p class="text-center text-[#494a4b] text-[13px]">The color could be slightly different between on the screen and in practice. / Please note that body</p>
+                <button class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
+                <button class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
+            </div>
+
+            <div class="w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
+                <img class="w-[100%] h-[250px]" src="./Page3-5.png" alt="">
+                <h1 class="text-[19px] font-bold">John Hardy Women's L</h1>
+                <h2 class="text-[#5045E6] font-bold">$695</h2>
+                <p class="text-center text-[#494a4b] text-[13px]">From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the oc</p>
+                <button class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
+                <button class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
+            </div>
+
+        </div>
+
+        <nav class="flex gap-[20px] justify-center items-center mt-[20px]">
+            <a class="text-white bg-[#a0a2a8] py-1 px-3 rounded-md" href="./index.html">1</a>
+            <a class="text-white bg-[#a0a2a8] py-1 px-3 rounded-md" href="./Main-Page-2.html">2</a>
+            <a class="text-white bg-[#5045E6] py-1 px-3 rounded-md" href="">3</a>
+        </nav>
+    </div>
+
+    <footer class="bg-[#5045E6] w-[100%] mt-[100px] pb-[50px]">
+        <div id="main" class="w-[90%] flex m-auto justify-start gap-3 pt-10 max-[750px]:flex-col pb-[50px]">
+            <div id="each" class="max-[750px]:w-[90%] w-[25%] flex flex-col gap-2 text-white text-[13px] mr-[30px]">
+                <h class="text-[20px] font-bold">E-Commerce</h>
+                <p>Your one-stop shop for the latest trends in fashion, electronics, and lifestyle. Shop smart. Shop easy.</p>
+            </div>
+
+            <nav class="max-[750px]:w-[90%] w-[25%] flex flex-col gap-2 text-white text-[13px]">
+                <h1 class="text-[20px] font-bold">Quick links</h1>
+                <a href="./index.html">Home</a>
+                <a href="./About.html">About</a>
+                <a href="./Contact.html">Contact</a>
+                <a href="./Admin-Dashboard.html">Dashboard</a>
+            </nav>
+
+            <nav class="max-[750px]:w-[90%] w-[25%] flex flex-col gap-2 text-white text-[13px]">
+                <h1 class="text-[20px] font-bold">Customer Services</h1>
+                <a href="">Privacy Policy</a>
+                <a href="">Terms & Conditions</a>
+                <a href="">Help & Support</a>
+            </nav>
+
+            <nav class="max-[750px]:w-[90%] w-[25%] flex flex-col gap-2 text-white text-[13px]">
+                <h1 class="text-[20px] font-bold">Contact Us</h1>
+                <a href="./index.html"><i class="fa-solid fa-location-dot mr-[10px]"></i>Lahore, Pakistan</a>
+                <a href="./About.html"><i class="fa-solid fa-envelope mr-[10px]"></i>support@gmail.com</a>
+                <a href="./Contact.html"><i class="fa-solid fa-phone mr-[10px]"></i>+92 312 3456789</a>
+                <div class="flex gap-2 mt-[10px]">
+                    <a href=""><i class="fa-brands fa-facebook-f text-2xl transition-all hover:scale-130 ease-out duration-1000"></i></a>
+                    <a href=""><i class="fa-brands fa-square-instagram text-2xl transition-all hover:scale-130 ease-out duration-1000"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter text-2xl transition-all hover:scale-130 ease-out duration-1000"></i></a>
+                    <a href=""><i class="fa-brands fa-github text-2xl transition-all hover:scale-130 ease-out duration-1000"></i></a>
+                </div>
+            </nav>
+        </div>
+        <p class="text-white text-center pt-[10px] border-t">&copy;2025 E-Commerce. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

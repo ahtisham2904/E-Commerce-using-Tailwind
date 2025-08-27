@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <title>E-Commerce</title>
+</head>
+
+<body>
+    <header class="h-[60px] flex border-b border-b-[#a0a2a8] justify-between items-center px-[30px] py-[40px] bg-white">
+        <h1 class="text-2xl font-bold">
+            <i class="fa-solid fa-cart-shopping mr-[10px] text-[#5045E6]"></i>E-Commerce
+        </h1>
+        <nav class="max-[850px]:hidden flex gap-9 text-[#5045E6] text-[20px]">
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#5045E6] hover:text-white rounded" href="./index.html">Home</a>
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#5045E6] hover:text-white rounded" href="">About</a>
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#5045E6] hover:text-white rounded" href="./Contact.html">Contact</a>
+        </nav>
+        <div>
+            <a href="./Whishlist.html"><i class="fa-solid fa-hand-holding-heart text-3xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#5045E6] hover:scale-110"></i></a>
+            <a href="./Your-Cart.html"><i class="fa-solid fa-cart-plus text-3xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#5045E6] hover:scale-110"></i></a>
+            <a href="./Admin-Dashboard.html"><button class="max-[850px]:hidden px-6 transition-all duration-500 bg-gray-500 text-white py-[10px] rounded-md hover:bg-[#5045E6] hover:text-white hover:scale-110">Admin Dashboard</button></a>
+        </div>
+    </header>
+    
+    <div id="main" class="min-[560px]:w-[95%] w-[70%] m-auto">
+        <h1 class="text-2xl font-bold text-center py-[20px]">About<span class="text-[#5045E6]"> E-Commerce</span></h1>
+        <p class="text-center">Welcome to E-Commerce, your number one destination for high-quality products. We’re dedicated to giving you the best shopping experience, focusing on reliability, customer service, and uniqueness.</p>
+
+        <div id="row" class="flex flex-col gap-10 md:gap-0 md:flex-row w-[100%] justify-between my-10">
+            <div id="box" class="md:w-[48%] w-[100%] shadow-2xl p-4 rounded-md transition-all hover:scale-110 ease-out duration-1000">
+                <h1 class="text-2xl font-bold text-[#5045E6]">Our Mission</h1>
+                <p class="text-[14px] pt-2">Our mission is to provide top-quality products at competitive prices while ensuring the best customer experience. We strive to be your most trusted online shopping destinat</p>
+            </div>
+            <div id="box" class="md:w-[48%] w-[100%] shadow-2xl p-4 rounded-md transition-all hover:scale-110 ease-out duration-1000">
+                <h1 class="text-2xl font-bold text-[#5045E6]">Our Vision</h1>
+                <p class="text-[14px] pt-2">We aim to revolutionize online shopping by making it effortless, affordable, and enjoyable. Our goal is to bring the best products from around the world right to your doorstep.</p>
+            </div>
+        </div>
+
+        <h1 class="text-3xl font-bold text-center p-[20px]">Why <span class="text-[#5045E6]">Chose us?</span></h1>
+        <div id="row2" class="flex flex-col gap-10 md:gap-0 md:flex-row w-[100%] justify-between my-10">
+            <div id="box" class="md:w-[32%] w-[100%] shadow-2xl p-4 rounded-md transition-all hover:scale-105 ease-out duration-1000">
+                <h1 class="text-[20px] text-[#5045E6] text-center">High-Quality Products</h1>
+                <p class="text-[14px] text-center pt-2">We offer a carefully curated selection of premium products.</p>
+            </div>
+            <div id="box" class="md:w-[32%] w-[100%] shadow-2xl p-4 rounded-md transition-all hover:scale-105 ease-out duration-1000">
+                <h1 class="text-[20px] text-[#5045E6] text-center">Fast & Secure Shipping</h1>
+                <p class="text-[14px] text-center pt-2">Get your orders delivered quickly and securely.</p>
+            </div>
+            <div id="box" class="md:w-[32%] w-[100%] shadow-2xl p-4 rounded-md transition-all hover:scale-105 ease-out duration-1000">
+                <h1 class="text-[20px] text-[#5045E6] text-center">Excellent Customer Support</h1>
+                <p class="text-[14px] text-center pt-2">Our support team is available 24/7 to assist you.</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-5 justify-center items-center">
+            <h1 class="text-2xl text-center font-bold">Start Shopping Now!</h1>
+            <p class="text-center">Explore our wide range of products and enjoy an amazing shopping experience.</p>
+            <button class="bg-[#5045E6] text-white py-2 px-3 rounded-md transition-all hover:scale-110 ease-out duration-1000">Browse Products</button>
+        </div>
+    </div>
+
+    <footer class="bg-[#5045E6] w-[100%] mt-[100px] pb-[50px]">
+        <div id="main" class="w-[90%] flex m-auto justify-start gap-3 pt-10 max-[750px]:flex-col pb-[50px]">
+            <div id="each" class="max-[750px]:w-[90%] w-[25%] flex flex-col gap-2 text-white text-[13px] mr-[30px]">
+                <h class="text-[20px] font-bold">E-Commerce</h>
+                <p>Your one-stop shop for the latest trends in fashion, electronics, and lifestyle. Shop smart. Shop easy.</p>
+            </div>
+
+            <nav class="max-[750px]:w-[90%] w-[25%] flex flex-col gap-2 text-white text-[13px]">
+                <h1 class="text-[20px] font-bold">Quick links</h1>
+                <a href="./index.html">Home</a>
+                <a href="./About.html">About</a>
+                <a href="./Contact.html">Contact</a>
+                <a href="./Admin-Dashboard.html">Dashboard</a>
+            </nav>
+
+            <nav class="max-[750px]:w-[90%] w-[25%] flex flex-col gap-2 text-white text-[13px]">
+                <h1 class="text-[20px] font-bold">Customer Services</h1>
+                <a href="">Privacy Policy</a>
+                <a href="">Terms & Conditions</a>
+                <a href="">Help & Support</a>
+            </nav>
+
+            <nav class="max-[750px]:w-[90%] w-[25%] flex flex-col gap-2 text-white text-[13px]">
+                <h1 class="text-[20px] font-bold">Contact Us</h1>
+                <a href="./index.html"><i class="fa-solid fa-location-dot mr-[10px]"></i>Lahore, Pakistan</a>
+                <a href="./About.html"><i class="fa-solid fa-envelope mr-[10px]"></i>support@gmail.com</a>
+                <a href="./Contact.html"><i class="fa-solid fa-phone mr-[10px]"></i>+92 312 3456789</a>
+                <div class="flex gap-2 mt-[10px]">
+                    <a href=""><i class="fa-brands fa-facebook-f text-2xl transition-all hover:scale-130 ease-out duration-1000"></i></a>
+                    <a href=""><i class="fa-brands fa-square-instagram text-2xl transition-all hover:scale-130 ease-out duration-1000"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter text-2xl transition-all hover:scale-130 ease-out duration-1000"></i></a>
+                    <a href=""><i class="fa-brands fa-github text-2xl transition-all hover:scale-130 ease-out duration-1000"></i></a>
+                </div>
+            </nav>
+        </div>
+        <p class="text-white text-center pt-[10px] border-t">&copy;2025 E-Commerce. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
