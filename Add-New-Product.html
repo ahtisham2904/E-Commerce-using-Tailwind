@@ -9,7 +9,7 @@
     <title>E-Commerce</title>
 </head>
 
-<body class="bg-[#dfe0e2]">
+<body>
     <header class="h-[60px] flex border-b border-b-[#a0a2a8] justify-between items-center px-[30px] py-[40px] bg-white">
         <div class="text-4xl flex justify-end">
             <img class="w-[50px]" src="./Logo.PNG" alt="">
@@ -26,7 +26,7 @@
         <div class="flex">
             <a href="./Whishlist.html"><i class="fa-solid fa-hand-holding-heart text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#5045E6] hover:scale-110"></i></a>
             <a href="./Your-Cart.html"><i class="fa-solid fa-cart-plus text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#5045E6] hover:scale-110"></i></a>
-            <a href=""><button class="max-[720px]:hidden px-6 transition-all duration-500 bg-gray-500 text-white py-[10px] rounded-md hover:bg-[#5045E6] hover:text-white hover:scale-110">Admin Dashboard</button></a>
+            <a href="./Admin-Dashboard.html"><button class="max-[720px]:hidden px-6 transition-all duration-500 bg-gray-500 text-white py-[10px] rounded-md hover:bg-[#5045E6] hover:text-white hover:scale-110">Admin Dashboard</button></a>
             <!-- Hamburger -->
             <div class="min-[721px]:hidden">
                 <i class="fa-solid fa-bars text-4xl ml-[10px]"></i>
@@ -34,19 +34,50 @@
         </div>
     </header>
     <!-- Main -->
-    <div id="main" class="w-[100%] m-auto flex flex-col justify-center items-center">
-        <div id="form" class="md:w-[30%] w-[90%] mt-[20%] py-10 px-2 flex flex-col gap-4 justify-center items-center bg-white">
-            <h1 class="text-2xl font-bold text-[#5045E6]">Login</h1>
-            <form class="flex flex-col p-4 w-[90%]">
-                <label >Email</label>
-                <input class="border border-black rounded-md px-2 py-1 mb-2" type="text" name="email" id="email" placeholder="Enter email">
-                <label>Password</label>
-                <input class="border border-black rounded-md px-2 py-1 mb-2" type="password" name="password" id="password" placeholder="Enter password">
-            </form>
-            <a href="./Dashboard-Main.html" class="w-[60%] m-auto"><button class="w-[100%] text-white py-2 bg-[#5045E6] rounded-md transition-all hover:scale-120 ease-out duration-1000">Login</button></a>
+    <div id="main" class="flex w-[100%]">
+        <!-- sidebar -->
+        <div id="left-sidebar" class="flex flex-col w-[200px] bg-[#edeeee] h-[800px] gap-[20px] pt-[20px] max-[1024px]:hidden">
+            <a href="./Dashboard-Main.html"><h1 class="pl-[10px]"><i class="fa-brands fa-windows mr-[10px] text-2xl"></i>Dashboard</h1></a>
+            <a href="./Add-New-Product.html"><h1 class="pl-[10px]"><i class="fa-solid fa-bag-shopping mr-[10px] text-2xl"></i>Add Product</h1></a>
+            <a href="./Manage-Products.html"><h1 class="pl-[10px]"><i class="fa-solid fa-list mr-[10px] text-2xl"></i>View Product</h1></a>
+            <a href=""><h1 class="pl-[10px]"><i class="fa-solid fa-arrow-right-from-bracket mr-[10px] text-2xl"></i>Logout</h1></a>
+        </div>
+
+        <!-- Hamburger -->
+        <div class="min-[1025px]:hidden absolute right-2">
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </div>
+
+        <!-- Right-Side -->
+        <div id="right" class="flex m-auto w-[100%]">
+            <!-- box right -->
+            <div id="box-right" class="w-[95%] p-[20px] gap-[20px] shadow-md flex flex-col justify-center items-center rounded-md m-auto my-[30px]">
+                <h1 class="text-2xl font-bold">Add Product Data</h1>
+                <div id="row" class="w-[100%] flex gap-[10px] max-[750px]:flex-col justify-center items-center">
+                    <div id="photo" class="w-[400px] h-[360px] rounded-md flex justify-center items-center border border-black">
+                        <h1>No image</h1>
+                    </div>
+                    <div id="details" class="w-[85%]">
+                        <form class="w-[100%] flex flex-col gap-[10px]">
+                            <input class="border border-black p-[10px] rounded-md" type="text" placeholder="Product Title">
+                            <input class="border border-black p-[10px] rounded-md" type="text" placeholder="Product Price">
+                            <textarea class="border border-black p-[10px] rounded-md" name="description" id="description" placeholder="Product Description"></textarea>
+                            <select class="border border-black p-[10px] rounded-md"  name="" id="">
+                                <option  value="">Select Category</option>
+                                <option value="">Electronics</option>
+                                <option value="">Clothing</option>
+                                <option value="">Toys</option>
+                            </select>
+                            <input class="border border-black p-[10px] rounded-md" type="text" placeholder="Chose File No file Chosen">
+                            <button class="w-[400px] m-auto bg-[#5045E6] text-white py-[10px] rounded-md font-bold mt-[10px] transition-all hover:scale-110 ease-out duration-1000 ">Add Product</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <footer class="bg-[#5045E6] w-[100%] mt-[100px] pb-[50px]">
+    <footer class="bg-[#5045E6] w-[100%] pb-[50px]">
         <div id="main" class="w-[90%] flex m-auto justify-start gap-3 pt-10 max-[750px]:flex-col pb-[50px]">
             <div id="each" class="max-[750px]:w-[90%] w-[25%] flex flex-col gap-2 text-white text-[13px] mr-[30px]">
                 <h class="text-[20px] font-bold">E-Commerce</h>

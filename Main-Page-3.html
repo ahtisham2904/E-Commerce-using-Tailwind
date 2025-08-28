@@ -11,21 +11,28 @@
 
 <body>
     <header class="h-[60px] flex border-b border-b-[#a0a2a8] justify-between items-center px-[30px] py-[40px] bg-white">
-        <h1 class="text-2xl font-bold">
-            <i class="fa-solid fa-cart-shopping mr-[10px] text-[#5045E6]"></i>E-Commerce
-        </h1>
-        <nav class="max-[850px]:hidden flex gap-9 text-[#5045E6] text-[20px]">
+        <div class="text-4xl flex justify-end">
+            <img class="w-[50px]" src="./Logo.PNG" alt="">
+            <h1 class="font-medium max-[930px]:hidden">E-Commerce</h1>
+        </div>
+        
+        <nav class="max-[720px]:hidden flex gap-9 text-[#5045E6] text-[20px]">
             <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#5045E6] hover:text-white rounded" href="./index.html">Home</a>
             <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#5045E6] hover:text-white rounded" href="./About.html">About</a>
             <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#5045E6] hover:text-white rounded" href="./Contact.html">Contact</a>
         </nav>
-        <div>
-            <a href="./Whishlist.html"><i class="fa-solid fa-hand-holding-heart text-3xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#5045E6] hover:scale-110"></i></a>
-            <a href="./Your-Cart.html"><i class="fa-solid fa-cart-plus text-3xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#5045E6] hover:scale-110"></i></a>
-            <a href="./Admin-Dashboard.html"><button class="max-[850px]:hidden px-6 transition-all duration-500 bg-gray-500 text-white py-[10px] rounded-md hover:bg-[#5045E6] hover:text-white hover:scale-110">Admin Dashboard</button></a>
+
+
+        <div class="flex">
+            <a href="./Whishlist.html"><i class="fa-solid fa-hand-holding-heart text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#5045E6] hover:scale-110"></i></a>
+            <a href="./Your-Cart.html"><i class="fa-solid fa-cart-plus text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#5045E6] hover:scale-110"></i></a>
+            <a href="./Admin-Dashboard.html"><button class="max-[720px]:hidden px-6 transition-all duration-500 bg-gray-500 text-white py-[10px] rounded-md hover:bg-[#5045E6] hover:text-white hover:scale-110">Admin Dashboard</button></a>
+            <!-- Hamburger -->
+            <div class="min-[721px]:hidden">
+                <i class="fa-solid fa-bars text-4xl ml-[10px]"></i>
+            </div>
         </div>
     </header>
-    
     <h1 class="text-5xl font-bold text-center pt-3">Our Products</h1>
     <form class="flex justify-center items-center mt-[20px] mb-[15px]">
         <input class="border-1 w-[40vw] h-[35px] rounded-md pl-[10px]" type="text" placeholder="Search products">
