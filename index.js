@@ -246,3 +246,18 @@ function loadToSearchList(elements){
 //     localStorage.setItem("arrayAddNewProducts",JSON.stringify(arrayAddNewProducts))
 // }
 // AddToStorage()
+
+// async function Moke() {
+//     try{
+//         let response = await fetch("https://68d4e478e29051d1c0ac6c77.mockapi.io/api/movie/Movie")
+//         arrayAddNewProducts = await response.json()
+//         console.log(arrayAddNewProducts)
+//         arrayAddNewProducts.forEach(movie => {
+//             console.log(movie.name)
+//         })
+//     }
+//     catch(error){
+//         console.error("Error fetching data:",error)
+//     }
+// }
+// Moke()
