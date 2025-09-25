@@ -93,6 +93,6 @@ function UpdateTotalAmount(){
         let price = parseFloat(document.getElementById("price-"+itemId).textContent.replace(/[^0-9.]/g, ""))
         let qty = parseInt(document.getElementById("qty-"+itemId).value)
         totalAmount += (price * qty)
-        document.getElementById("total").textContent = `Total : ${totalAmount.toFixed(2)}`
     }) 
+    document.getElementById("total").textContent = `Total : ${totalAmount.toFixed(2)}`
 }
