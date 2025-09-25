@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../Resoures/Logo.PNG" type="image/png">
+    <link rel="icon" href="../Resoures/Logo.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <title>E-Commerce</title>
@@ -18,17 +18,17 @@
         </div>
         
         
-        <nav class="max-[720px]:hidden flex gap-9 text-[#5045E6] text-[20px]">
-            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#5045E6] hover:text-white rounded" href="../index.html">Home</a>
-            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#5045E6] hover:text-white rounded" href="About.html">About</a>
-            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#5045E6] hover:text-white rounded" href="Contact.html">Contact</a>
+        <nav class="max-[720px]:hidden flex gap-9 text-[#1E90FF] text-[20px]">
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#1E90FF] hover:text-white rounded" href="../index.html">Home</a>
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#1E90FF] hover:text-white rounded" href="About.html">About</a>
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#1E90FF] hover:text-white rounded" href="Contact.html">Contact</a>
         </nav>
 
 
         <div class="flex">
-            <a href="Whishlist.html"><i class="fa-solid fa-hand-holding-heart text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#5045E6] hover:scale-110"></i></a>
-            <a href="Your-Cart.html"><i class="fa-solid fa-cart-plus text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#5045E6] hover:scale-110"></i></a>
-            <a href="Admin-Dashboard.html"><button class="max-[720px]:hidden px-6 transition-all duration-500 bg-gray-500 text-white py-[10px] rounded-md hover:bg-[#5045E6] hover:text-white hover:scale-110">Admin Dashboard</button></a>
+            <a href="Whishlist.html"><i class="fa-solid fa-hand-holding-heart text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#1E90FF] hover:scale-110"></i></a>
+            <a href="Your-Cart.html"><i class="fa-solid fa-cart-plus text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#1E90FF] hover:scale-110"></i></a>
+            <a href="Admin-Dashboard.html"><button class="max-[720px]:hidden px-6 transition-all duration-500 bg-gray-500 text-white py-[10px] rounded-md hover:bg-[#1E90FF] hover:text-white hover:scale-110">Admin Dashboard</button></a>
             <!-- Hamburger -->
             <div class="min-[721px]:hidden">
                 <i class="fa-solid fa-bars text-4xl ml-[10px]"></i>
@@ -37,20 +37,20 @@
     </header>
     
     <!-- Main -->
-    <div id="main" class="w-[100%] flex flex-col justify-center items-center">
-        <div id="form" class="max-[450px]:w-[90%] w-[400px] mt-[60px] py-10 px-2 flex flex-col gap-4 justify-center items-center bg-white">
-            <h1 class="text-2xl font-bold text-[#5045E6]">Login</h1>
-            <form class="flex flex-col p-4 w-[90%]">
+    <div id="main" class="w-[100%] flex flex-col justify-center items-center bg-gradient-to-t from-white to-[#87CEFA]">
+        <div id="form" class="max-[450px]:w-[90%] w-[400px] mt-[60px] py-10 px-2 flex flex-col gap-4 justify-center items-center bg-gradient-to-b from-white to-[#87CEFA] rounded-xl">
+            <h1 class="text-2xl font-bold text-[#1E90FF]">Login</h1>
+            <form id="LogIn-Form" for="submit" class="flex flex-col p-4 w-[90%]">
                 <label >Email</label>
-                <input class="border border-black rounded-md px-2 py-1 mb-2" type="text" name="email" id="email" placeholder="Enter email">
+                <input class="border border-black rounded-md px-2 py-1 mb-2" type="text" name="email" id="loginEmail" placeholder="Enter email">
                 <label>Password</label>
-                <input class="border border-black rounded-md px-2 py-1 mb-2" type="password" name="password" id="password" placeholder="Enter password">
+                <input class="border border-black rounded-md px-2 py-1 mb-2" type="password" name="password" id="loginPassword" placeholder="Enter password">
+                <button class="w-[100%] mt-[20px] text-white py-2 bg-[#1E90FF] rounded-md transition-all hover:scale-120 ease-out duration-1000">Login</button>
             </form>
-            <a href="./Dashboard-Main.html" class="w-[60%] m-auto"><button class="w-[100%] text-white py-2 bg-[#5045E6] rounded-md transition-all hover:scale-120 ease-out duration-1000">Login</button></a>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-[#5045E6] w-[100%] mt-[50px] pb-[50px]">
+    <footer class="bg-[#1E90FF] w-[100%] mt-[50px] pb-[50px]">
         <div id="main" class="w-[90%] flex m-auto justify-start gap-3 pt-10 max-[750px]:flex-col pb-[50px]">
             <div id="each" class="max-[750px]:w-[90%] w-[25%] flex flex-col gap-2 text-white text-[13px] mr-[30px]">
                 <h class="text-[20px] font-bold">E-Commerce</h>
@@ -87,5 +87,8 @@
         </div>
         <p class="text-white text-center pt-[10px] border-t">&copy;2025 E-Commerce. All rights reserved.</p>
     </footer>
+
+    <!-- JS -->
+    <script src="Admin-Dashboard.js"></script>
 </body>
 </html>

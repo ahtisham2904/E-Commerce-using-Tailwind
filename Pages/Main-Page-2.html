@@ -4,136 +4,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../Resoures/Logo.PNG" type="image/png">
+    <link rel="icon" href="../Resoures/Logo.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <title>E-Commerce</title>
 </head>
 
-<body>
-    <header class="h-[60px] flex border-b border-b-[#a0a2a8] justify-between items-center px-[30px] py-[40px] bg-white">
-        <div class="text-4xl flex justify-end">
+<body id="body" class="overflow-x-hidden">
+    <header id="header" class=" h-[100px] flex border-b border-b-[#a0a2a8] justify-between items-start pt-[20px] px-[30px] bg-white">
+        <div class="text-4xl flex justify-end items-center">
             <img class="w-[50px]" src="../Resoures/Logo.PNG" alt="">
             <h1 class="font-extrabold text-transparent bg-clip-text bg-[url('../Resoures/E-Commerce-background.jpeg')] bg-center bg-cover max-[950px]:hidden">E-Commerce</h1>
         </div>
         
         
-        <nav class="max-[720px]:hidden flex gap-9 text-[#5045E6] text-[20px]">
-            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#5045E6] hover:text-white rounded" href="../index.html">Home</a>
-            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#5045E6] hover:text-white rounded" href="About.html">About</a>
-            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#5045E6] hover:text-white rounded" href="Contact.html">Contact</a>
+        <nav class="max-[720px]:hidden flex gap-9 text-[#1E90FF] text-[20px]">
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#1E90FF] hover:text-white rounded" href="../index.html">Home</a>
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#1E90FF] hover:text-white rounded" href="../Pages/About.html">About</a>
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#1E90FF] hover:text-white rounded" href="../Pages/Contact.html">Contact</a>
         </nav>
 
 
         <div class="flex">
-            <a href="Whishlist.html"><i class="fa-solid fa-hand-holding-heart text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#5045E6] hover:scale-110"></i></a>
-            <a href="Your-Cart.html"><i class="fa-solid fa-cart-plus text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#5045E6] hover:scale-110"></i></a>
-            <a href="Admin-Dashboard.html"><button class="max-[720px]:hidden px-6 transition-all duration-500 bg-gray-500 text-white py-[10px] rounded-md hover:bg-[#5045E6] hover:text-white hover:scale-110">Admin Dashboard</button></a>
+            <a href="../Pages/Whishlist.html"><i class="fa-solid fa-hand-holding-heart text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#1E90FF] hover:scale-110"></i></a>
+            <a href="../Pages/Your-Cart.html"><i class="fa-solid fa-cart-plus text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#1E90FF] hover:scale-110"></i></a>
+            <a href="../Pages/Admin-Dashboard.html"><button class="max-[720px]:hidden px-6 transition-all duration-500 bg-gray-500 text-white py-[10px] rounded-md hover:bg-[#1E90FF] hover:text-white hover:scale-110">Admin Dashboard</button></a>
             <!-- Hamburger -->
             <div class="min-[721px]:hidden">
                 <i class="fa-solid fa-bars text-4xl ml-[10px]"></i>
             </div>
         </div>
+        <!-- Truck -->
+        <div id="truck" class="overflow-x-hidden hidden">
+            <img src="../Resoures/Truck Delivery-2.png" alt="">
+            <div class="wheel-main">
+                <img src="../Resoures/Truck-Tyre.png" alt="">
+                <img src="../Resoures/Truck-Tyre.png" alt="">
+            </div>
+        </div>
     </header>
     
     <!-- Main -->
-    <h1 class="text-8xl font-bold text-center pt-3 text-transparent bg-clip-text bg-[url('../Resoures/Products-background.jpeg')] bg-center bg-cover max-[630px]:text-5xl">Our Products</h1>
-    <form class="flex justify-center items-center mt-[20px] mb-[15px]">
-        <input class="border-1 w-[40vw] h-[35px] rounded-md pl-[10px] max-[800px]:w-[80vw]" type="text" placeholder="Search products">
-    </form>
-    <div class="main">
-        <nav class="flex gap-[20px] justify-center px-[10px] flex-wrap mb-6">
-            <a class="bg-[#5045E6] rounded-md px-[30px] py-[10px] text-white" href="">All</a>
-            <a class="bg-[#5045E6] rounded-md px-[30px] py-[10px] text-white" href="">Electronics</a>
-            <a class="bg-[#5045E6] rounded-md px-[30px] py-[10px] text-white" href="">Clothing</a>
-            <a class="bg-[#5045E6] rounded-md px-[30px] py-[10px] text-white" href="">Home & Furniture</a>
-            <a class="bg-[#5045E6] rounded-md px-[30px] py-[10px] text-white" href="">Beauty & Personal Care</a>
-            <a class="bg-[#5045E6] rounded-md px-[30px] py-[10px] text-white" href="">Toys & Games</a>
-            <a class="bg-[#5045E6] rounded-md px-[30px] py-[10px] text-white" href="">Sports  & Outdoors</a>
-        </nav>
-        <div class="w-[98%] flex flex-wrap justify-center items-center">
-            <div class="w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
-                <img class="w-[90%] h-[250px]" src="../Resoures/Page2-1.png" alt="">
-                <h1 class="text-[20px] font-bold">Fjallraven - Foldsac</h1>
-                <h2 class="text-[#5045E6] font-bold">$109.95</h2>
-                <p class="text-center text-[#494a4b] text-[13px]">Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in t</p>
-                <button class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
-                <button class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
-            </div>
+    <div id="Home">
+        <h1 class="text-8xl font-bold text-center pt-3 text-transparent bg-clip-text bg-[url('../Resoures/Products-background.jpeg')] bg-center bg-cover max-[630px]:text-5xl">Our Products</h1>
+        <form id="SearchForm" for="submit" class="flex justify-center items-center mt-[20px] mb-[15px]">
+            <input class="border-1 w-[40vw] h-[35px] rounded-md pl-[10px] max-[800px]:w-[80vw]" id="SearchBox" type="text" placeholder="Search products">
+        </form>
 
-            <div class="w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
-                <img class="w-[100%] h-[250px]" src="../Resoures/Page2-2.png" alt="">
-                <h1 class="text-[20px] font-bold">Mens Casual Premium</h1>
-                <h2 class="text-[#5045E6] font-bold">$22.3</h2>
-                <p class="text-center text-[#494a4b] text-[13px]">Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fa hags</p>
-                <button class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
-                <button class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
-            </div>
+        <!-- Searched Items -->
+        <div id="SearchSection" class="w-[80%] absolute left-1/2 -translate-x-1/2 bg-gradient-to-b from-white to-[#87CEFA] rounded-2xl m-[20px] shadow-3xl z-20">
+            <div id="SearchedItems" class="w-[98%] flex flex-wrap gap-[20px] justify-center">
 
-            <div class="w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
-                <img class="w-[100%] h-[250px]" src="../Resoures/Page2-3.png" alt="">
-                <h1 class="text-[20px] font-bold">Mens Cotton Jacket</h1>
-                <h2 class="text-[#5045E6] font-bold">$55.99</h2>
-                <p class="text-center text-[#494a4b] text-[13px]">great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working</p>
-                <button class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
-                <button class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
-            </div>
-
-            <div class="w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
-                <img class="w-[100%] h-[250px]" src="../Resoures/Page2-4.png" alt="">
-                <h1 class="text-[20px] font-bold">Mens Casual Slim Fit</h1>
-                <h2 class="text-[#5045E6] font-bold">$15.99</h2>
-                <p class="text-center text-[#494a4b] text-[13px]">The color could be slightly different between on the screen and in practice. / Please note that body</p>
-                <button class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
-                <button class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
-            </div>
-
-            <div class="w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
-                <img class="w-[100%] h-[250px]" src="../Resoures/Page2-5.png" alt="">
-                <h1 class="text-[19px] font-bold">John Hardy Women's L</h1>
-                <h2 class="text-[#5045E6] font-bold">$695</h2>
-                <p class="text-center text-[#494a4b] text-[13px]">From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the oc</p>
-                <button class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
-                <button class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
-            </div>
-
-            <div class="w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
-                <img class="w-[100%] h-[250px]" src="../Resoures/Page2-6.png" alt="">
-                <h1 class="text-[20px] font-bold">Solid Gold Petite Mi</h1>
-                <h2 class="text-[#5045E6] font-bold">$168</h2>
-                <p class="text-center text-[#494a4b] text-[13px]">Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez</p>
-                <button class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
-                <button class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
-            </div>
-
-            <div class="w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
-                <img class="w-[100%] h-[250px]" src="../Resoures/Page2-7.png" alt="">
-                <h1 class="text-[20px] font-bold">White Gold Plated Pr</h1>
-                <h2 class="text-[#5045E6] font-bold">$9.99</h2>
-                <p class="text-center text-[#494a4b] text-[13px]">Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love</p>
-                <button class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
-                <button class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
-            </div>
-
-            <div class="w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
-                <img class="w-[100%] h-[250px]" src="../Resoures/Page2-8.png" alt="">
-                <h1 class="text-[20px] font-bold">White Gold Plated Pr</h1>
-                <h2 class="text-[#5045E6] font-bold">$9.99</h2>
-                <p class="text-center text-[#494a4b] text-[13px]">Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love</p>
-                <button class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
-                <button class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0">Add to Cart</button>
             </div>
         </div>
+        <div id="main" class="main">
+            <nav class="flex gap-[20px] justify-center px-[10px] flex-wrap mb-6">
+                <a class="bg-[#1E90FF] rounded-md px-[30px] py-[10px] text-white" href="">All</a>
+                <a class="bg-[#1E90FF] rounded-md px-[30px] py-[10px] text-white" href="">Electronics</a>
+                <a class="bg-[#1E90FF] rounded-md px-[30px] py-[10px] text-white" href="">Clothing</a>
+                <a class="bg-[#1E90FF] rounded-md px-[30px] py-[10px] text-white" href="">Home & Furniture</a>
+                <a class="bg-[#1E90FF] rounded-md px-[30px] py-[10px] text-white" href="">Beauty & Personal Care</a>
+                <a class="bg-[#1E90FF] rounded-md px-[30px] py-[10px] text-white" href="">Toys & Games</a>
+                <a class="bg-[#1E90FF] rounded-md px-[30px] py-[10px] text-white" href="">Sports  & Outdoors</a>
+            </nav>
+            <div id="items" class="w-[98%] flex flex-wrap justify-center items-center">
+                <!-- <div id="9" class="bg-white w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
+                    <img class="w-[100%] h-[250px]" src="../Resoures/Page2-2.png" alt="">
+                    <h1 class="text-[20px] font-bold">WD 2TB Elements Port</h1>
+                    <h2 class="text-[#1E90FF] font-bold">$64</h2>
+                    <p class="text-center text-[#494a4b] text-[13px]">USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatible</p>
+                    <button id="cBtn" onclick="addToCart('9')" class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Cart</button>
+                    <button id="wBtn" onclick="addToWishList('9')" class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Wishlist</button>
+                </div>
 
-        <nav class="flex gap-[20px] justify-center items-center mt-[20px]">
-            <a class="text-white bg-[#a0a2a8] py-1 px-3 rounded-md" href="../index.html">1</a>
-            <a class="text-white bg-[#5045E6] py-1 px-3 rounded-md" href="">2</a>
-            <a class="text-white bg-[#a0a2a8] py-1 px-3 rounded-md" href="Main-Page-3.html">3</a>
-        </nav>
+                <div id="10" class="bg-white w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
+                    <img class="w-[100%] h-[250px]" src="../Resoures/Page2-3.png" alt="">
+                    <h1 class="text-[20px] font-bold">SanDisk SSD PLUS 1TB</h1>
+                    <h2 class="text-[#1E90FF] font-bold">$109</h2>
+                    <p class="text-center text-[#494a4b] text-[13px]">Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SA</p>
+                    <button id="cBtn" onclick="addToCart('10')" class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Cart</button>
+                    <button id="wBtn" onclick="addToWishList('10')" class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Wishlist</button>
+                </div>
+
+                <div id="11" class="bg-white w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
+                    <img class="w-[100%] h-[250px]" src="../Resoures/Page2-4.png" alt="">
+                    <h1 class="text-[20px] font-bold">Silicon Power 256GB</h1>
+                    <h2 class="text-[#1E90FF] font-bold">$109</h2>
+                    <p class="text-center text-[#494a4b] text-[13px]">3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable fas</p>
+                    <button id="cBtn" onclick="addToCart('11')" class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Cart</button>
+                    <button id="wBtn" onclick="addToWishList('11')" class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Wishlist</button>
+                </div>
+
+                <div id="12" class="bg-white w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
+                    <img class="w-[100%] h-[250px]" src="../Resoures/Page2-5.png" alt="">
+                    <h1 class="text-[19px] font-bold">WD 4TB Gaming Drive</h1>
+                    <h2 class="text-[#1E90FF] font-bold">$114</h2>
+                    <p class="text-center text-[#494a4b] text-[13px]">Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacit</p>
+                    <button id="cBtn" onclick="addToCart('12')" class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Cart</button>
+                    <button id="wBtn" onclick="addToWishList('12')" class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Wishlist</button>
+                </div>
+
+                <div id="13" class="bg-white w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
+                    <img class="w-[100%] h-[250px]" src="../Resoures/Page2-6.png" alt="">
+                    <h1 class="text-[20px] font-bold">Acer SB220Q bi 21.5</h1>
+                    <h2 class="text-[#1E90FF] font-bold">$599</h2>
+                    <p class="text-center text-[#494a4b] text-[13px]">21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compat</p>
+                    <button id="cBtn" onclick="addToCart('13')" class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Cart</button>
+                    <button id="wBtn" onclick="addToWishList('13')" class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Wishlist</button>
+                </div>
+
+                <div id="14" class="bg-white w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
+                    <img class="w-[100%] h-[250px]" src="../Resoures/Page2-7.png" alt="">
+                    <h1 class="text-[20px] font-bold">Samsung 49-Inch CHG9</h1>
+                    <h2 class="text-[#1E90FF] font-bold">$999.99</h2>
+                    <p class="text-center text-[#494a4b] text-[13px]">49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT</p>
+                    <button id="cBtn" onclick="addToCart('14')" class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Cart</button>
+                    <button id="wBtn" onclick="addToWishList('14')" class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Wishlist</button>
+                </div>
+
+                <div id="15" class="bg-white w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
+                    <img class="w-[100%] h-[250px]" src="../Resoures/Page2-8.png" alt="">
+                    <h1 class="text-[20px] font-bold">BIYLACLESEN Women's</h1>
+                    <h2 class="text-[#1E90FF] font-bold">$56.99</h2>
+                    <p class="text-center text-[#494a4b] text-[13px]">Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester</p>
+                    <button id="cBtn" onclick="addToCart('15')" class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Cart</button>
+                    <button id="wBtn" onclick="addToWishList('15')" class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Wishlist</button>
+                </div>
+
+                <div id="16" class="bg-white w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2 transition-all hover:scale-105 ease-out duration-1000">
+                    <img class="w-[90%] h-[250px]" src="../Resoures/Page3-1.png" alt="">
+                    <h1 class="text-[20px] font-bold">Lock and Love Women</h1>
+                    <h2 class="text-[#1E90FF] font-bold">$29.95</h2>
+                    <p class="text-center text-[#494a4b] text-[13px]">100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather mat</p>
+                    <button id="cBtn" onclick="addToCart('16')" class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Cart</button>
+                    <button id="wBtn" onclick="addToWishList('16')" class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Wishlist</button>
+                </div> -->
+            </div>
+
+            <nav class="flex gap-[20px] justify-center items-center mt-[20px]">
+                <a class="text-white bg-[#a0a2a8] py-1 px-3 rounded-md" href="../index.html">1</a>
+                <a class="text-white bg-[#1E90FF] py-1 px-3 rounded-md" href="">2</a>
+                <a class="text-white bg-[#a0a2a8] py-1 px-3 rounded-md" href="Main-Page-3.html">3</a>
+            </nav>
+        </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-[#5045E6] w-[100%] mt-[100px] pb-[50px]">
+    <footer class="bg-[#1E90FF] w-[100%] mt-[100px] pb-[50px]">
         <div id="main" class="w-[90%] flex m-auto justify-start gap-3 pt-10 max-[750px]:flex-col pb-[50px]">
             <div id="each" class="max-[750px]:w-[90%] w-[25%] flex flex-col gap-2 text-white text-[13px] mr-[30px]">
                 <h class="text-[20px] font-bold">E-Commerce</h>
@@ -170,6 +188,9 @@
         </div>
         <p class="text-white text-center pt-[10px] border-t">&copy;2025 E-Commerce. All rights reserved.</p>
     </footer>
+
+    <!-- JS -->
+    <script src="Main-Page-2.js"></script>
 </body>
 
 </html>
