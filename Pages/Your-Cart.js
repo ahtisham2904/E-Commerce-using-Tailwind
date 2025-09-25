@@ -56,6 +56,7 @@ function RemoveFromCart(itemId){
     localStorage.setItem("arrayCart",JSON.stringify(itemData))
     alert("Removed successfully")
     document.getElementById(itemId).remove()
+    UpdateTotalAmount()
     countWish()
     countCart()
 }
