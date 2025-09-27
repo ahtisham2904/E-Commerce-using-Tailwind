@@ -68,7 +68,9 @@ function addToCart(itemId){
     let cloneItem = item.cloneNode(true)
     let exists = arrayCart.find(element => element.id === cloneItem.id)
     if(!exists){
-        truckMove()
+        if (window.matchMedia("(min-width: 600px)").matches) {
+            truckMove()
+        }
         let itemAdd = makeObject(cloneItem)
         arrayCart.push(itemAdd)
         localStorage.setItem("arrayCart",JSON.stringify(arrayCart))
@@ -101,7 +103,9 @@ function addToWishList(itemId) {
     let cloneItem = item.cloneNode(true)
     let exists = arrayWish.find(element => element.id === cloneItem.id)
     if(!exists){
-        truckMove()
+        if (window.matchMedia("(min-width: 600px)").matches) {
+            truckMove()
+        }
         let itemAdd = makeObject(cloneItem)
         console.log(itemAdd)
         arrayWish.push(itemAdd)
@@ -178,24 +182,31 @@ function SearchItems() {
 function loadToSearchList(elements){
     let containerToAdd = document.getElementById("SearchedItems")
     elements.forEach(element => {
-        let itemId = element.id
-        let itemSrc = element.image
         let itemTitle = element.title
-        let itemPrice = element.price
-        let itemDescription = element.description
-        let itemToAdd = document.createElement("div")
-        itemToAdd.setAttribute("class","mx-auto mb-[25px] bg-white w-[250px] h-[450px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 mt-7")
-        itemToAdd.setAttribute("id",itemId)
+        let itemToAdd = document.createElement("button")
+        itemToAdd.setAttribute("onclick",`ShowSearchedItem('${element.id}')`)
         itemToAdd.innerHTML = `
-            <img class="w-[90%] h-[200px] transition-all hover:scale-115 ease-out duration-1500" src="${itemSrc}" alt="Error!">
-            <h1 class="text-[20px] font-bold">${itemTitle.slice(0,20)}</h1>
-            <h2 class="text-[#5045E6] font-bold">$${itemPrice}</h2>
-            <p class="text-center text-[#494a4b] text-[13px]">${itemDescription.slice(0,60)}</p>
-            <button id="cBtn" onclick="addToCart('${itemId}')" class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Cart</button>
-            <button id="wBtn" onclick="addToWishList('${itemId}')"  class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Wishlist</button>
+            ${itemTitle.slice(0,20)}
         `
         containerToAdd.appendChild(itemToAdd)
     })
+}
+function ShowSearchedItem(id){
+    let searchResultContainer = document.getElementById("SearchedItems")
+    searchResultContainer.innerHTML = ""
+    let itemToAdd = document.getElementById(id)
+    let item = arrayAddNewProducts.find(item => item.id == id)
+    itemToAdd.setAttribute("class","mx-auto mb-[25px] bg-white w-[250px] h-[450px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 mt-7")
+    itemToAdd.setAttribute("id",item.id)
+    itemToAdd.innerHTML = `
+        <img class="w-[90%] h-[200px] transition-all hover:scale-115 ease-out duration-1500" src="${item.image}" alt="Error!">
+        <h1 class="text-[20px] font-bold">${item.title.slice(0,20)}</h1>
+        <h2 class="text-[#5045E6] font-bold">$${item.price}</h2>
+        <p class="text-center text-[#494a4b] text-[13px]">${item.description.slice(0,60)}</p>
+        <button id="cBtn" onclick="addToCart('${item.id}')" class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Cart</button>
+        <button id="wBtn" onclick="addToWishList('${item.id}')"  class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Wishlist</button>
+    `
+    searchResultContainer.appendChild(itemToAdd)
 }
 
 // function LoadFromStorage(){

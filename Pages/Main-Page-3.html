@@ -14,7 +14,7 @@
 <body id="body" class="overflow-x-hidden">
     <header id="header" class=" h-[100px] flex border-b border-b-[#a0a2a8] justify-between items-start pt-[20px] px-[30px] bg-white">
         <div class="text-4xl flex justify-end items-center">
-            <img class="w-[50px]" src="../Resoures/Logo.PNG" alt="">
+            <a href="../index.html"><img class="w-[50px]" src="../Resoures/Logo.png" alt=""></a>
             <h1 class="font-extrabold text-transparent bg-clip-text bg-[url('../Resoures/E-Commerce-background.jpeg')] bg-center bg-cover max-[950px]:hidden">E-Commerce</h1>
         </div>
         
@@ -27,8 +27,8 @@
 
 
         <div class="flex">
-            <a href="../Pages/Whishlist.html"><i class="fa-solid fa-hand-holding-heart text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#1E90FF] hover:scale-110"></i></a>
-            <a href="../Pages/Your-Cart.html"><i class="fa-solid fa-cart-plus text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#1E90FF] hover:scale-110"></i></a>
+            <a href="../Pages/Whishlist.html"><i class="fa-solid fa-hand-holding-heart text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#1E90FF] hover:scale-110 relative"><div id="countWish" class="text-white text-[15px] pt-[2px] bg-[#1E90FF] rounded-[50%] h-[20px] w-[20px] absolute -top-3  -right-2 hidden"></div></i></a>
+            <a href="../Pages/Your-Cart.html"><i class="fa-solid fa-cart-plus text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#1E90FF] hover:scale-110 relative"><div id="countCart" class="text-white text-[15px] pt-[2px] bg-[#1E90FF] rounded-[50%] h-[20px] w-[20px] absolute -top-3  -right-2 hidden"></div></i></a>
             <a href="../Pages/Admin-Dashboard.html"><button class="max-[720px]:hidden px-6 transition-all duration-500 bg-gray-500 text-white py-[10px] rounded-md hover:bg-[#1E90FF] hover:text-white hover:scale-110">Admin Dashboard</button></a>
             <!-- Hamburger -->
             <div class="min-[721px]:hidden">
@@ -48,15 +48,15 @@
     <!-- Main -->
     <div id="Home">
         <h1 class="text-8xl font-bold text-center pt-3 text-transparent bg-clip-text bg-[url('../Resoures/Products-background.jpeg')] bg-center bg-cover max-[630px]:text-5xl">Our Products</h1>
-        <form id="SearchForm" for="submit" class="flex justify-center items-center mt-[20px] mb-[15px]">
-            <input class="border-1 w-[40vw] h-[35px] rounded-md pl-[10px] max-[800px]:w-[80vw]" id="SearchBox" type="text" placeholder="Search products">
-        </form>
-        <!-- Searched Items -->
-        <div id="SearchSection" class="w-[80%] absolute left-1/2 -translate-x-1/2 bg-gradient-to-b from-white to-[#87CEFA] rounded-2xl m-[20px] shadow-3xl z-20">
-            <div id="SearchedItems" class="w-[98%] flex flex-wrap gap-[20px] justify-center">
+        <form id="SearchForm" class="flex justify-center items-center mt-[20px] mb-[15px] relative">
+            <input class="border-1 w-[40vw] h-[35px] rounded-[20px] pl-[10px] max-[800px]:w-[80vw]" id="SearchBox" type="text" placeholder="Search products">
+            <!-- Searched Items -->
+            <div id="SearchSection" class="w-[40vw] max-[800px]:w-[80vw] rounded-md h-auto absolute top-[40px] left-1/2 -translate-x-1/2 bg-white z-20 hidden overflow-x-auto">
+                <div id="SearchedItems" class="w-[100%] flex flex-col items-start gap-[10px] pl-[10px] py-[10px]">
 
+                </div>
             </div>
-        </div>
+        </form>
         <div id="main" class="main">
             <nav class="flex gap-[20px] justify-center px-[10px] flex-wrap mb-6">
                 <a class="bg-[#1E90FF] rounded-md px-[30px] py-[10px] text-white" href="">All</a>

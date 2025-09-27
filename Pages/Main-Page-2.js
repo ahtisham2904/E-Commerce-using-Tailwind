@@ -1,3 +1,57 @@
+let arrayAddNewProducts = []
+
+async function FetchData() {
+    try{
+        let response = await fetch("https://fakestoreapi.com/products")
+        arrayAddNewProducts = await response.json()
+        arrayAddNewProducts = arrayAddNewProducts.filter(item => (item.id>8 && item.id<=16))
+        let containerToAdd = document.getElementById("items")
+            arrayAddNewProducts.forEach(element => {
+            let itemId = element.id
+            let itemSrc = element.image
+            let itemTitle = element.title
+            let itemPrice = element.price
+            let itemDescription = element.description
+            let itemToAdd = document.createElement("div")
+            itemToAdd.setAttribute("id",itemId)
+            itemToAdd.setAttribute("class","bg-white w-[250px] h-[450px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2")
+            itemToAdd.innerHTML = `
+                <img class="w-[90%] h-[200px] transition-all hover:scale-115 ease-out duration-1500" src="${itemSrc}" alt="">
+                <h1 class="text-[20px] font-bold">${itemTitle.slice(0,20)}</h1>
+                <h2 class="text-[#5045E6] font-bold">$${itemPrice}</h2>
+                <p class="text-center text-[#494a4b] text-[13px]">${itemDescription.slice(0,60)}</p>
+                <button id="cBtn" onclick="addToCart('${itemId}')" class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Cart</button>
+                <button id="wBtn" onclick="addToWishList('${itemId}')"  class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Wishlist</button>
+            `
+            containerToAdd.appendChild(itemToAdd)
+        })
+    }
+    catch(error){
+        console.error("Error fetching data:",error)
+    }
+}
+FetchData()
+
+function countCart() {
+    let arrayCart = JSON.parse(localStorage.getItem("arrayCart")) || []
+    if(arrayCart.length!==0){
+        let countCart = document.getElementById("countCart")
+        countCart.style.display = "block"
+        countCart.textContent = `${arrayCart.length}`
+    }
+}
+countCart()
+
+function countWish() {
+    let arrayWish = JSON.parse(localStorage.getItem("arrayWish")) || []
+    if(arrayWish.length!==0){
+        let countWish = document.getElementById("countWish")
+        countWish.style.display = "block"
+        countWish.textContent = `${arrayWish.length}`
+    }
+}
+countWish()
+
 function makeObject(item){
     return{
         id : item.id,
@@ -9,19 +63,14 @@ function makeObject(item){
 }
 
 function addToCart(itemId){
-    // truckMove()
     let arrayCart = JSON.parse(localStorage.getItem("arrayCart")) || []
     let item = document.getElementById(itemId)
     let cloneItem = item.cloneNode(true)
-    let img = cloneItem.querySelector("img");
-    if (img) {
-        let originalSrc = item.querySelector("img").getAttribute("src");
-        img.setAttribute("src", "../" + originalSrc);
-    }
     let exists = arrayCart.find(element => element.id === cloneItem.id)
     if(!exists){
         truckMove()
         let itemAdd = makeObject(cloneItem)
+        console.log(itemAdd)
         arrayCart.push(itemAdd)
         localStorage.setItem("arrayCart",JSON.stringify(arrayCart))
         let message = document.createElement("div")
@@ -32,6 +81,7 @@ function addToCart(itemId){
         `
         document.getElementById("Home").append(message)
         DelayMessage(message)
+        countCart()
     }
     else{
         let truckShow = document.getElementById("truck")
@@ -51,10 +101,6 @@ function addToWishList(itemId) {
     let item = document.getElementById(itemId)
     let cloneItem = item.cloneNode(true)
     let img = cloneItem.querySelector("img");
-    if (img) {
-        let originalSrc = item.querySelector("img").getAttribute("src");
-        img.setAttribute("src", "../" + originalSrc);
-    }
     let exists = arrayWish.find(element => element.id === cloneItem.id)
     if(!exists){
         truckMove()
@@ -69,6 +115,7 @@ function addToWishList(itemId) {
         `
         document.getElementById("Home").append(message)
         DelayMessage(message)
+        countWish()
     }
     else{
         let truckShow = document.getElementById("truck")
@@ -104,74 +151,60 @@ async function truckMove(){
     truckShow.style.display = "none"
 }
 
-let SearchForm = document.getElementById("SearchForm")
-SearchForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-})
-
-let itemData = JSON.parse(localStorage.getItem("arrayAddNewProducts")) || []
+let searchBox = document.getElementById("SearchBox")
+searchBox.addEventListener("input", SearchItems)
 function SearchItems() {
-    let searchedTitle = document.getElementById("SearchBox").value
-    let find = itemData.find(element => element.title===searchedTitle) || ""
-    if(!find){
-        alert("Item does not exist!")
-        location.reload()
+    let searchedTitle = document.getElementById("SearchBox").value.replace(/\s+/g, "").toLowerCase()
+    let results = arrayAddNewProducts.filter(el => el.title.replace(/\s+/g, "").toLowerCase().includes(searchedTitle))
+    let Hide = document.getElementById("SearchSection")
+    let Opacity = document.getElementById("main")
+    let container = document.getElementById("SearchedItems")
+    container.innerHTML = ""
+    if (searchedTitle === "") {
+        Hide.style.display = "none"
+        Opacity.style.opacity = "1"
         return
     }
-    let Hide = document.getElementById("main")
-    Hide.style.display = "none"
-    loadToSearchList(find)
-}
-function loadToSearchList(element){
-    let containerToAdd = document.getElementById("Home")
-    let itemId = element.id
-    let itemSrc = element.imgSrc
-    let itemTitle = element.title
-    let itemPrice = element.price
-    let itemDescription = element.description
-    let itemToAdd = document.createElement("div")
-    itemToAdd.setAttribute("class","mx-auto bg-white w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 mt-7 transition-all hover:scale-105 ease-out duration-1000")
-    itemToAdd.setAttribute("id",itemId)
-    itemToAdd.innerHTML = `
-        <img class="w-[90%] h-[250px]" src="${itemSrc}" alt="Error!">
-        <h1 class="text-[20px] font-bold">${itemTitle}</h1>
-        <h2 class="text-[#5045E6] font-bold">${itemPrice}</h2>
-        <p class="text-center text-[#494a4b] text-[13px]">${itemDescription}</p>
-    `
-    containerToAdd.after(itemToAdd)
+    Opacity.style.opacity = "0.2"
+    Hide.style.opacity = "1"
+    Hide.style.display = "block"
+    if (results.length === 0) {
+        container.innerHTML = `<p class="text-center text-red-500 mt-4">No items found!</p>`
+        return
+    }
+    loadToSearchList(results)
 }
 
-async function FetchData() {
-    try{
-        let response = await fetch("https://fakestoreapi.com/products")
-        let arrayAddNewProducts = await response.json()
-        arrayAddNewProducts = arrayAddNewProducts.filter(item => (item.id>8 && item.id<=16))
-        let containerToAdd = document.getElementById("items")
-            arrayAddNewProducts.forEach(element => {
-            let itemId = element.id
-            let itemSrc = element.image
-            let itemTitle = element.title
-            let itemPrice = element.price
-            let itemDescription = element.description
-            let itemToAdd = document.createElement("div")
-            itemToAdd.setAttribute("id",itemId)
-            itemToAdd.setAttribute("class","bg-white w-[250px] h-[450px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 my-2 mx-2")
-            itemToAdd.innerHTML = `
-                <img class="w-[90%] h-[200px] transition-all hover:scale-115 ease-out duration-1500" src="${itemSrc}" alt="">
-                <h1 class="text-[20px] font-bold">${itemTitle.slice(0,20)}</h1>
-                <h2 class="text-[#5045E6] font-bold">${itemPrice}</h2>
-                <p class="text-center text-[#494a4b] text-[13px]">${itemDescription.slice(0,60)}</p>
-                <button id="cBtn" onclick="addToCart('${itemId}')" class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Cart</button>
-                <button id="wBtn" onclick="addToWishList('${itemId}')"  class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Wishlist</button>
-            `
-            containerToAdd.appendChild(itemToAdd)
-        })
-    }
-    catch(error){
-        console.error("Error fetching data:",error)
-    }
+function loadToSearchList(elements){
+    let containerToAdd = document.getElementById("SearchedItems")
+    elements.forEach(element => {
+        let itemTitle = element.title
+        let itemToAdd = document.createElement("button")
+        itemToAdd.setAttribute("onclick",`ShowSearchedItem('${element.id}')`)
+        itemToAdd.innerHTML = `
+            ${itemTitle.slice(0,20)}
+        `
+        containerToAdd.appendChild(itemToAdd)
+    })
 }
-FetchData()
+function ShowSearchedItem(id){
+    let searchResultContainer = document.getElementById("SearchedItems")
+    searchResultContainer.innerHTML = ""
+    let itemToAdd = document.getElementById(id)
+    let item = arrayAddNewProducts.find(item => item.id == id)
+    itemToAdd.setAttribute("class","mx-auto mb-[25px] bg-white w-[250px] h-[450px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 mt-7")
+    itemToAdd.setAttribute("id",item.id)
+    itemToAdd.innerHTML = `
+        <img class="w-[90%] h-[200px] transition-all hover:scale-115 ease-out duration-1500" src="${item.image}" alt="Error!">
+        <h1 class="text-[20px] font-bold">${item.title.slice(0,20)}</h1>
+        <h2 class="text-[#5045E6] font-bold">$${item.price}</h2>
+        <p class="text-center text-[#494a4b] text-[13px]">${item.description.slice(0,60)}</p>
+        <button id="cBtn" onclick="addToCart('${item.id}')" class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Cart</button>
+        <button id="wBtn" onclick="addToWishList('${item.id}')"  class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Wishlist</button>
+    `
+    searchResultContainer.appendChild(itemToAdd)
+}
+
 
 // function LoadFromStorage(){
 //     let arrayAddNewProducts = JSON.parse(localStorage.getItem("arrayAddNewProducts")) || []
@@ -199,55 +232,7 @@ FetchData()
 // }
 // LoadFromStorage()
 
-let searchBox = document.getElementById("SearchBox")
-searchBox.addEventListener("input", SearchItems)
 
-function SearchItems() {
-    let searchedTitle = document.getElementById("SearchBox").value.replace(/\s+/g, "").toLowerCase()
-    let results = itemData.filter(el => el.title.replace(/\s+/g, "").toLowerCase().includes(searchedTitle))
-    let Hide = document.getElementById("SearchSection")
-    let Opacity = document.getElementById("main")
-    let container = document.getElementById("SearchedItems")
-    container.innerHTML = ""
-    if (searchedTitle === "") {
-        Hide.style.display = "none"
-        Opacity.style.opacity = "1"
-        return
-    }
-    Opacity.style.opacity = "0.2"
-    Hide.style.opacity = "1"
-    Hide.style.display = "block"
-    if (results.length === 0) {
-        container.innerHTML = `<p class="text-center text-red-500 mt-4">No items found!</p>`
-        return
-    }
-    loadToSearchList(results)
-}
-function loadToSearchList(elements){
-    let containerToAdd = document.getElementById("SearchedItems")
-    elements.forEach(element => {
-        let itemId = element.id
-        let itemSrc = element.imgSrc
-        if(!itemSrc.includes("../")){
-            itemSrc = "../"+itemSrc
-        }
-        let itemTitle = element.title
-        let itemPrice = element.price
-        let itemDescription = element.description
-        let itemToAdd = document.createElement("div")
-        itemToAdd.setAttribute("class","mx-auto mb-[25px] bg-white w-[250px] h-[500px] shadow-xl border border-[#a0a2a8] rounded-2xl flex flex-col justify-between items-center p-2 mt-7 transition-all hover:scale-105 ease-out duration-1000")
-        itemToAdd.setAttribute("id",itemId)
-        itemToAdd.innerHTML = `
-            <img class="w-[90%] h-[250px]" src="${itemSrc}" alt="Error!">
-            <h1 class="text-[20px] font-bold">${itemTitle}</h1>
-            <h2 class="text-[#5045E6] font-bold">${itemPrice}</h2>
-            <p class="text-center text-[#494a4b] text-[13px]">${itemDescription}</p>
-            <button id="cBtn" onclick="addToCart('${itemId}')" class="w-[100%] text-white bg-green-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Cart</button>
-            <button id="wBtn" onclick="addToWishList('${itemId}')"  class="w-[100%] text-white bg-red-500 py-2 rounded-md relative bottom-0 transition-all hover:scale-105 ease-out duration-1000">Add to Wishlist</button>
-        `
-        containerToAdd.appendChild(itemToAdd)
-    })
-}
 
 // function makeObject1(item){
 //     return{

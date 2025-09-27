@@ -13,19 +13,19 @@
 <body class="bg-[#dfe0e2]">
     <header class="h-[60px] flex border-b border-b-[#a0a2a8] justify-between items-center px-[30px] py-[40px] bg-white">
         <div class="text-4xl flex justify-end">
-            <img class="w-[50px]" src="../Resoures/Logo.PNG" alt="">
+            <a href="../index.html"><img class="w-[50px]" src="../Resoures/Logo.png" alt=""></a>
             <h1 class="font-extrabold text-transparent bg-clip-text bg-[url('../Resoures/E-Commerce-background.jpeg')] bg-center bg-cover max-[950px]:hidden">E-Commerce</h1>
         </div>
         
         <nav class="max-[720px]:hidden flex gap-9 text-[#1E90FF] text-[20px]">
-            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#1E90FF] hover:text-white rounded" href="../index.html">Home</a>
-            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#1E90FF] hover:text-white rounded" href="About.html">About</a>
-            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#1E90FF] hover:text-white rounded" href="Contact.html">Contact</a>
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out text-[#58595f] hover:bg-[#1E90FF] hover:text-white rounded" href="../index.html">Home</a>
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out text-[#58595f] hover:bg-[#1E90FF] hover:text-white rounded" href="About.html">About</a>
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out text-[#58595f] hover:bg-[#1E90FF] hover:text-white rounded" href="Contact.html">Contact</a>
         </nav>
 
         <div class="flex">
             <a href="Whishlist.html"><i class="fa-solid fa-hand-holding-heart text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#1E90FF] hover:scale-110 relative"><div id="countWish" class="text-white text-[15px] pt-[2px] bg-[#1E90FF] rounded-[50%] h-[20px] w-[20px] absolute -top-3  -right-2 hidden"></div></i></a>
-            <a href=""><i class="fa-solid fa-cart-plus text-4xl mr-[10px] text-[#58595f] transition-all duration-500 hover:text-[#1E90FF] hover:scale-110 relative"><div id="countCart" class="text-white text-[15px] pt-[2px] bg-[#1E90FF] rounded-[50%] h-[20px] w-[20px] absolute -top-3  -right-2 hidden"></div></i></a>
+            <a href=""><i class="fa-solid fa-cart-plus text-4xl mr-[10px] text-[#1E90FF] transition-all duration-500 hover:text-[#1E90FF] hover:scale-110 relative"><div id="countCart" class="text-white text-[15px] pt-[2px] bg-[#1E90FF] rounded-[50%] h-[20px] w-[20px] absolute -top-3  -right-2 hidden"></div></i></a>
             <a href="Admin-Dashboard.html"><button class="max-[720px]:hidden px-6 transition-all duration-500 bg-gray-500 text-white py-[10px] rounded-md hover:bg-[#1E90FF] hover:text-white hover:scale-110">Admin Dashboard</button></a>
             <!-- Hamburger -->
             <div class="min-[721px]:hidden">
@@ -35,8 +35,22 @@
     </header>
     
     <!-- Main -->
+    <form id="SearchForm" class="flex justify-center items-center mt-[20px] mb-[15px] relative">
+        <input class="border-1 w-[40vw] h-[35px] rounded-[20px] pl-[10px] max-[800px]:w-[80vw] bg-white" id="SearchBox" type="text" placeholder="Search products">
+        <!-- Searched Items -->
+        <div id="SearchSection" class="w-[40vw] max-[800px]:w-[80vw] rounded-md h-auto absolute top-[40px] left-1/2 -translate-x-1/2 bg-white z-20 hidden overflow-x-auto">
+            <div id="SearchedItems" class="w-[100%] flex flex-col items-start gap-[10px] pl-[10px] py-[10px]">
+
+            </div>
+        </div>
+    </form>
     <h1 class="text-3xl font-bold text-center p-[20px]"> Your Cart</h1>
-    <div id="main" class="flex justify-center w-[98%] shadow-md rounded-md m-auto bg-white p-[20px]">
+    <!-- Show CheckOut -->
+    <div id="CheckOut">
+        
+    </div>
+    
+    <div id="main" class="flex justify-center w-[98%] shadow-md rounded-md m-auto bg-white p-[20px] z-10">
         <div id="container" class="each overflow-x-auto max-[700px]:overflow-x-auto">
             <table class="border-2 border-[#d4d4d6] min-w-[1000px] m-auto">
                 <thead>
@@ -53,12 +67,13 @@
                     <!-- Items Added -->
                 </tbody>
             </table>
-            <div id="SubTotal" class="w-[1000px] py-6">
-                <h1 id="total" class="inline font-bold mr-[800px]"></h1>
+            <div id="SubTotal" class="w-[1000px] py-6 flex justify-between px-[20px]">
+                <h1 id="total" class="inline font-bold">Total : $0.00</h1>
                 <button id="CheckOut" onclick="CheckOutItems()" class="bg-[#1E90FF] text-white py-1 px-2 rounded-md transition-all hover:scale-110 ease-out duration-1000">Checkout</button>
             </div>
         </div>
     </div>
+    
 
     <!-- Footer -->
     <footer class="bg-[#1E90FF] w-[100%] mt-[50px] pb-[50px]">
