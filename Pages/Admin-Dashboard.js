@@ -5,7 +5,9 @@ loginForm.addEventListener("submit", (e) => {
         alert("Plz fill the credentials!")
         return
     }
-    if(localStorage.getItem('email')!==document.getElementById("loginEmail").value || localStorage.getItem('password')!==document.getElementById("loginPassword").value){
+    let pass = 123
+    let email = 123
+    if(pass!==document.getElementById("loginEmail").value || email!==document.getElementById("loginPassword").value){
         alert("Email or password is wrong!")
         return
     }
