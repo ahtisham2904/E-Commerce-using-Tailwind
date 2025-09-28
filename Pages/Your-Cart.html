@@ -11,9 +11,9 @@
 </head>
 
 <body class="bg-[#dfe0e2]">
-    <header class="h-[60px] flex border-b border-b-[#a0a2a8] justify-between items-center px-[30px] py-[40px] bg-white">
+    <header id="header" class="h-[60px] flex border-b border-b-[#a0a2a8] justify-between items-center px-[30px] py-[40px] bg-white">
         <div class="text-4xl flex justify-end">
-            <a href="../index.html"><img class="w-[50px]" src="../Resoures/Logo.png" alt=""></a>
+            <a href="../index.html"><img class="w-[50px]" src="../Resoures/Logo.png" alt="Error!"></a>
             <h1 class="font-extrabold text-transparent bg-clip-text bg-[url('../Resoures/E-Commerce-background.jpeg')] bg-center bg-cover max-[950px]:hidden">E-Commerce</h1>
         </div>
         
@@ -28,8 +28,8 @@
             <a href=""><i class="fa-solid fa-cart-plus text-4xl mr-[10px] text-[#1E90FF] transition-all duration-500 hover:text-[#1E90FF] hover:scale-110 relative"><div id="countCart" class="text-white text-[15px] pt-[2px] bg-[#1E90FF] rounded-[50%] h-[20px] w-[20px] absolute -top-3  -right-2 hidden"></div></i></a>
             <a href="Admin-Dashboard.html"><button class="max-[720px]:hidden px-6 transition-all duration-500 bg-gray-500 text-white py-[10px] rounded-md hover:bg-[#1E90FF] hover:text-white hover:scale-110">Admin Dashboard</button></a>
             <!-- Hamburger -->
-            <div class="min-[721px]:hidden">
-                <i class="fa-solid fa-bars text-4xl ml-[10px]"></i>
+            <div id="Hamburger" class="min-[721px]:hidden">
+                <button onclick="ShowHamburgerMenu()"><i class="fa-solid fa-bars text-4xl ml-[10px]"></i></button>
             </div>
         </div>
     </header>

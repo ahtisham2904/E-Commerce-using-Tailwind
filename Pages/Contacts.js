@@ -1,21 +1,3 @@
-let loginForm = document.getElementById("LogIn-Form")
-loginForm.addEventListener("submit", (e) => {
-    e.preventDefault()
-    if(document.getElementById("loginEmail").value==="" || document.getElementById("loginPassword").value===""){
-        alert("Plz fill the credentials!")
-        return
-    }
-    if(localStorage.getItem('email')!==document.getElementById("loginEmail").value || localStorage.getItem('password')!==document.getElementById("loginPassword").value){
-        alert("Email or password is wrong!")
-        return
-    }
-    goToPage()
-})
-
-function goToPage() {
-    window.location.href = "Dashboard-Main.html"
-}
-
 
 function ShowHamburgerMenu() {
     let existingMenu = document.getElementById("hamburgerMenu")
@@ -26,12 +8,12 @@ function ShowHamburgerMenu() {
 
     let links = document.createElement("div")
     links.setAttribute("id", "hamburgerMenu")
-    links.setAttribute("class", "w-[200px] fixed top-2 right-20 bg-white rounded-sm shadow-lg z-40")
+    links.setAttribute("class", "w-[200px] fixed top-2 right-20 bg-white rounded-sm shadow-lg")
     links.innerHTML = `
         <nav class="flex flex-col text-[#1E90FF] text-[20px]">
             <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#1E90FF] text-[#58595f] hover:text-white rounded" href="../index.html">Home</a>
             <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#1E90FF] text-[#58595f] hover:text-white rounded" href="../Pages/About.html">About</a>
-            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#1E90FF] text-[#58595f] hover:text-white rounded" href="../Pages/Contact.html">Contact</a>
+            <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#1E90FF] hover:text-white rounded" href="../Pages/Contact.html">Contact</a>
             <a class="px-3 py-2 transition-all duration-500 ease-in-out hover:bg-[#1E90FF] text-[#58595f] hover:text-white rounded" href="../Pages/Admin-Dashboard.html">Admin Dashboard</a>
             
         </nav>
