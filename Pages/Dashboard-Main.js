@@ -1,4 +1,5 @@
 
+
 function ShowHamburgerMenu() {
     let existingMenu = document.getElementById("hamburgerMenu")
     if (existingMenu) {
@@ -30,3 +31,23 @@ function ShowHamburgerMenu() {
         }
     })
 }
+
+function countCart() {
+    let arrayCart = JSON.parse(localStorage.getItem("arrayCart")) || []
+    if(arrayCart.length!==0){
+        let countCart = document.getElementById("countCart")
+        countCart.style.display = "block"
+        countCart.textContent = `${arrayCart.length}`
+    }
+}
+countCart()
+
+function countWish() {
+    let arrayWish = JSON.parse(localStorage.getItem("arrayWish")) || []
+    if(arrayWish.length!==0){
+        let countWish = document.getElementById("countWish")
+        countWish.style.display = "block"
+        countWish.textContent = `${arrayWish.length}`
+    }
+}
+countWish()

@@ -5,8 +5,8 @@ loginForm.addEventListener("submit", (e) => {
         alert("Plz fill the credentials!")
         return
     }
-    let pass = 123
-    let email = 123
+    let pass = "123"
+    let email = "123"
     if(pass!==document.getElementById("loginEmail").value || email!==document.getElementById("loginPassword").value){
         alert("Email or password is wrong!")
         return
@@ -50,3 +50,23 @@ function ShowHamburgerMenu() {
         }
     })
 }
+
+function countCart() {
+    let arrayCart = JSON.parse(localStorage.getItem("arrayCart")) || []
+    if(arrayCart.length!==0){
+        let countCart = document.getElementById("countCart")
+        countCart.style.display = "block"
+        countCart.textContent = `${arrayCart.length}`
+    }
+}
+countCart()
+
+function countWish() {
+    let arrayWish = JSON.parse(localStorage.getItem("arrayWish")) || []
+    if(arrayWish.length!==0){
+        let countWish = document.getElementById("countWish")
+        countWish.style.display = "block"
+        countWish.textContent = `${arrayWish.length}`
+    }
+}
+countWish()
