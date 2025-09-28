@@ -1,4 +1,3 @@
-
 function ShowHamburgerMenu() {
     let existingMenu = document.getElementById("hamburgerMenu")
     if (existingMenu) {
@@ -50,3 +49,25 @@ function countWish() {
     }
 }
 countWish()
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function isValidEmail(email) {
+    return emailRegex.test(email);
+}
+let ContactForm = document.getElementById("Contact-Form")
+ContactForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    if(document.getElementById("email").value==="" || document.getElementById("subject").value==="" || document.getElementById("message").value===""){
+        alert("Plz fill the credentials!")
+        return
+    }
+    if(!isValidEmail(document.getElementById("email").value)){
+        alert("Plz give valid email!")
+        document.getElementById("email").value = ""
+        return
+    }
+    alert("Your message has been sent successfully.")
+    document.getElementById("email").value = ""
+    document.getElementById("subject").value = ""
+    document.getElementById("message").value = ""
+
+})
